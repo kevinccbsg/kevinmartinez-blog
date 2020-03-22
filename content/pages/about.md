@@ -2,7 +2,7 @@
 template: page
 title: About me
 socialImage: /media/image-2.jpg
-slug: kevin-martinez-info
+slug: about
 draft: false
 ---
 Hi!!! I'm Kevin Martínez. I'm a Javascript developer at [GuideSmiths](https://www.guidesmiths.com/) with several years of experience in web development. In my spare time, I like to work as a teacher in different companies. Teaching what I am going to share with you in this blog. 🙂
