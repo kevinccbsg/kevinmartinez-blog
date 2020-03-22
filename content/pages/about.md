@@ -1,13 +1,18 @@
 ---
-title: "About me"
-template: "page"
-socialImage: "/media/image-2.jpg"
+template: page
+title: About me
+socialImage: /media/image-2.jpg
+slug: kevin-martinez-info
+draft: false
 ---
+Hi!!! I'm Kevin Martínez. I'm a Javascript developer at [GuideSmiths](https://www.guidesmiths.com/) with several years of experience in web development. In my spare time, I like to work as a teacher in different companies. Teaching what I am going to share with you in this blog. 🙂
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+I've created this Blog to share with you my knowledge in testing, cypress, Javascript and everything related to web technologies. Every week I am going to upload a new post, and they are going to be focused on problems that I find every day, tips and mainly in how to test Frontend and Backend code created with Javascript technologies.
 
-![Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.](/media/image-2.jpg)
+You can find more info about me and my work in these links.
 
-*Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.*
+[Github](https://github.com/kevinccbsg)
 
-Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus
+[Twitter](https://twitter.com/kjmesc)
+
+[Linkedin](https://www.linkedin.com/in/kevinjmartinez/)
