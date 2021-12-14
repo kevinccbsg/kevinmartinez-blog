@@ -4,7 +4,7 @@ module.exports = {
   url: 'https://lumen.netlify.com',
   pathPrefix: '/',
   title: 'Blog by Kevin Martínez',
-  subtitle: 'Javascript developer at GuideSmiths. I have the goal to share with you knowledge about testing, cypress, Javascript and everything relate to web technologies.',
+  subtitle: 'Team lead at DCSL GuideSmiths and Cypress ambassador. I have the goal to share with you knowledge about testing, cypress, Javascript and everything relate to web technologies.',
   copyright: '',
   disqusShortname: '',
   postsPerPage: 4,
