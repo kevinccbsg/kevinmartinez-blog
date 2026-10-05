@@ -1,6 +1,42 @@
 [build]
-  publish = "public"
-  command = "gatsby build"
+  command = "npm run build"
+  publish = "build/client"
+
 [build.environment]
-  YARN_VERSION = "1.3.2"
-  YARN_FLAGS = "--no-ignore-optional"
+  NODE_VERSION = "24"
+
+# Old Gatsby URLs
+[[redirects]]
+  from = "/pages/about"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/category/*"
+  to = "/posts"
+  status = 301
+
+[[redirects]]
+  from = "/pages/contacts"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/tags"
+  to = "/posts"
+  status = 301
+
+[[redirects]]
+  from = "/categories"
+  to = "/posts"
+  status = 301
+
+[[redirects]]
+  from = "/tag/node-js"
+  to = "/posts?tag=nodejs"
+  status = 301
+
+[[redirects]]
+  from = "/tag/:tag"
+  to = "/posts?tag=:tag"
+  status = 301
