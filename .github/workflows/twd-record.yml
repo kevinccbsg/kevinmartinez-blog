@@ -1,0 +1,82 @@
+name: Record a PR's tests
+
+# Label a PR `record` and this records the tests the branch added, then comments
+# the link. Deliberately separate from the test workflow: a recording is
+# optional, the pull request it describes is not.
+on:
+  pull_request:
+    types: [labeled]
+
+concurrency:
+  group: record-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  record:
+    if: github.event.label.name == 'record'
+    runs-on: ubuntu-latest
+    # Belt, not workaround: the CLI already guards against hangs, but a
+    # recording must never cost a caller more than a recording.
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pull-requests: write # comment the link, drop the label
+    env:
+      GH_TOKEN: ${{ github.token }}
+
+    steps:
+      # The PR head, not the merge commit: the point is to see the tests this
+      # branch built. fetch-depth: 0 because changed-since needs history, and a
+      # depth-1 clone does not contain the base commit at all.
+      - name: Checkout the PR head
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # The action assumes the app is already served at the url in
+      # twd.config.json — the same contract the `run` action has. Plain `dev`:
+      # a recording needs no coverage instrumentation.
+      - name: Start dev server
+        run: |
+          nohup npm run dev > vite.log 2>&1 &
+          npx -y wait-on http://localhost:5180/testing --timeout 60000 --interval 1000 || (cat vite.log && exit 1)
+
+      - name: Record the tests this branch added
+        id: rec
+        uses: BRIKEV/twd-cli/.github/actions/record@v1.10.0
+        with:
+          changed-since: ${{ github.event.pull_request.base.sha }}
+          artifact-name: twd-recording-pr-${{ github.event.pull_request.number }}
+
+      # Best effort: a fork PR gets a read-only token and cannot comment. Zero
+      # clips is a normal outcome, not a failure.
+      - name: Comment the link
+        if: always()
+        continue-on-error: true
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          CLIPS: ${{ steps.rec.outputs.clip-count }}
+          VIDEO_URL: ${{ steps.rec.outputs.artifact-url }}
+        run: |
+          if [ "${CLIPS:-0}" = "0" ]; then
+            gh pr comment "$PR_NUMBER" --body "Nothing to record: this branch added no TWD tests."
+          else
+            gh pr comment "$PR_NUMBER" --body "Recording: ${CLIPS} clip(s), one per test this branch added — [download the artifact](${VIDEO_URL}) and unzip."
+          fi
+
+      # Dropping the label makes a retry one click instead of remove-then-add.
+      - name: Drop the label
+        if: always()
+        continue-on-error: true
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: gh pr edit "$PR_NUMBER" --remove-label record

@@ -30,17 +30,13 @@ jobs:
 
       - name: Start dev server
         run: |
-          nohup npm run dev > vite.log 2>&1 &
+          nohup npm run dev:ci > vite.log 2>&1 &
           npx -y wait-on http://localhost:5180/testing --timeout 60000 --interval 1000 || (cat vite.log && exit 1)
-
-      - name: Cache Puppeteer browsers
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/puppeteer
-          key: ${{ runner.os }}-puppeteer-${{ hashFiles('package-lock.json') }}
-
-      - name: Install Chrome for Puppeteer
-        run: npx puppeteer browsers install chrome
+        env:
+          CI: true
 
       - name: Run TWD tests
-        run: npm run test:ci
+        uses: BRIKEV/twd-cli/.github/actions/run@v1.10.0
+
+      - name: Display coverage
+        run: npm run collect:coverage:text

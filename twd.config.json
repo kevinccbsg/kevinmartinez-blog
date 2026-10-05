@@ -2,5 +2,6 @@
   "url": "http://localhost:5180/testing",
   "timeout": 10000,
   "headless": true,
-  "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]
+  "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
+  "coverage": true
 }

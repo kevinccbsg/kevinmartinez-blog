@@ -9,7 +9,11 @@
     "typecheck": "react-router typegen && tsc",
     "import:devto": "node scripts/import-devto.mjs",
     "check:build": "node scripts/check-build.mjs",
-    "test:ci": "twd-cli run"
+    "test:ci": "twd-cli run",
+    "dev:ci": "CI=true react-router dev",
+    "collect:coverage:text": "npx nyc report --reporter=text --temp-dir .nyc_output",
+    "collect:coverage:html": "npx nyc report --reporter=html --temp-dir .nyc_output",
+    "collect:coverage:lcov": "npx nyc report --reporter=lcov --temp-dir .nyc_output"
   },
   "dependencies": {
     "@react-router/node": "^8.4.0",
@@ -27,11 +31,13 @@
     "@types/node": "^26.6.4",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
+    "nyc": "^18.0.0",
     "tailwindcss": "^4.3.3",
     "twd-cli": "1.10.0",
     "twd-js": "1.10.1",
     "twd-relay": "1.4.0",
     "typescript": "^5.9.3",
-    "vite": "^8.3.2"
+    "vite": "^8.3.2",
+    "vite-plugin-istanbul": "^9.0.1"
   }
 }

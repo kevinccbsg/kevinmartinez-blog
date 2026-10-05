@@ -3,6 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, type PluginOption } from "vite";
 import { twd } from "twd-js/vite-plugin";
 import { twdRemote } from "twd-relay/vite";
+import istanbul from "vite-plugin-istanbul";
 
 export default defineConfig(({ command }) => ({
   plugins: [
@@ -13,6 +14,13 @@ export default defineConfig(({ command }) => ({
       ? [
           twd({ testFilePattern: "/**/*.twd.test.{ts,tsx}", serviceWorker: false }),
           twdRemote() as PluginOption,
+          // Instruments app code only when CI is set (npm run dev:ci) for twd-cli coverage.
+          istanbul({
+            include: "app/**",
+            exclude: ["node_modules", "app/twd-tests/**", "**/*.server.ts"],
+            extension: [".ts", ".tsx"],
+            requireEnv: !process.env.CI,
+          }),
         ]
       : []),
   ],
