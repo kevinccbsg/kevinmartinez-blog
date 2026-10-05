@@ -13,7 +13,7 @@ export default function About() {
   return (
     <div className="page about">
       <div className="about-intro">
-        <img src="/kevin.jpg" alt="Kevin Martínez working on a laptop" width="640" height="600" />
+        <img src="/kevin.jpg" alt="Kevin Martínez wearing a TWD t-shirt" width="480" height="480" />
         <div>
           <h1 className="page-title">About</h1>
           <p className="about-name">{SITE.fullName}</p>

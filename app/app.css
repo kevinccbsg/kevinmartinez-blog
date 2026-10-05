@@ -785,18 +785,17 @@ a:hover {
    --------------------------------------------------------------- */
 .about-intro {
   display: grid;
-  grid-template-columns: 9rem minmax(0, 1fr);
+  grid-template-columns: 11rem minmax(0, 1fr);
   gap: 1.75rem;
   align-items: center;
 }
 
 .about-intro img {
-  width: 9rem;
-  height: 9rem;
+  width: 11rem;
+  height: 11rem;
   object-fit: cover;
-  object-position: 50% 20%;
-  border-radius: 50%;
-  border: 3px solid var(--brand);
+  border-radius: 16px;
+  border: 1px solid var(--rule);
 }
 
 @media (max-width: 36rem) {
