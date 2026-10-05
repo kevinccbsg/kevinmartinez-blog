@@ -8,9 +8,11 @@
   --surface: #ffffff;
   --ink: #1c2833;
   --ink-soft: #4a5a67;
-  --brand: #123956;
-  --brand-hover: #1a5270;
-  --brand-soft: rgba(18, 57, 86, 0.08);
+  --heading: #15222d;
+  --brand: #1a7c80;
+  --brand-hover: #123956;
+  --brand-soft: rgba(26, 124, 128, 0.1);
+  --chip: #e8eef1;
   --rule: #d6e0e5;
   --pass: #1a7f37;
   --code-bg: #f0f4f6;
@@ -41,9 +43,11 @@
     --surface: #142230;
     --ink: #dbe4ea;
     --ink-soft: #9fb0bd;
+    --heading: #eef3f6;
     --brand: #2faaae;
     --brand-hover: #3bbec2;
     --brand-soft: rgba(47, 170, 174, 0.14);
+    --chip: #1b2c3a;
     --rule: #22384a;
     --pass: #3fb950;
     --code-bg: #0b141c;
@@ -57,9 +61,11 @@
   --surface: #142230;
   --ink: #dbe4ea;
   --ink-soft: #9fb0bd;
+  --heading: #eef3f6;
   --brand: #2faaae;
   --brand-hover: #3bbec2;
   --brand-soft: rgba(47, 170, 174, 0.14);
+  --chip: #1b2c3a;
   --rule: #22384a;
   --pass: #3fb950;
   --code-bg: #0b141c;
@@ -97,7 +103,7 @@ main {
 
 h1, h2, h3 {
   font-family: var(--font-display);
-  color: var(--brand);
+  color: var(--heading);
   line-height: 1.15;
   text-wrap: balance;
 }
@@ -165,7 +171,7 @@ a:hover {
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 1.15rem;
-  color: var(--brand);
+  color: var(--heading);
   text-decoration: none;
 }
 
@@ -188,9 +194,11 @@ a:hover {
 
 .site-header nav a:hover,
 .site-header nav a[aria-current="page"] {
-  color: var(--brand);
+  color: var(--heading);
   text-decoration: underline;
+  text-decoration-color: var(--brand);
   text-decoration-thickness: 2px;
+  text-underline-offset: 0.35em;
 }
 
 .theme-toggle {
@@ -259,8 +267,8 @@ a:hover {
   display: inline-block;
   padding: 0.7rem 1.2rem;
   border-radius: 8px;
-  border: 2px solid var(--brand);
-  background: var(--brand);
+  border: 2px solid var(--heading);
+  background: var(--heading);
   color: var(--paper);
   font-family: var(--font-ui);
   font-weight: 700;
@@ -269,20 +277,22 @@ a:hover {
 }
 
 .button:hover {
-  background: var(--brand-hover);
-  border-color: var(--brand-hover);
+  background: var(--brand);
+  border-color: var(--brand);
   color: var(--paper);
   text-decoration: none;
 }
 
 .button-quiet {
   background: transparent;
-  color: var(--brand);
+  border-color: var(--rule);
+  color: var(--heading);
 }
 
 .button-quiet:hover {
-  background: var(--brand-soft);
-  color: var(--brand);
+  background: transparent;
+  border-color: var(--brand);
+  color: var(--heading);
 }
 
 /* The test run: the one loud thing on the site. */
@@ -414,6 +424,12 @@ a:hover {
   border-top: 1px solid var(--rule);
 }
 
+.section-head a,
+.twd-band .inline-links a {
+  color: var(--ink);
+  text-decoration-color: var(--brand);
+}
+
 .section-head {
   display: flex;
   align-items: baseline;
@@ -485,11 +501,15 @@ a:hover {
 }
 
 .post-list h3 a {
+  color: var(--heading);
   text-decoration: none;
 }
 
 .post-list h3 a:hover {
+  color: var(--heading);
   text-decoration: underline;
+  text-decoration-color: var(--brand);
+  text-decoration-thickness: 2px;
 }
 
 .post-list p {
@@ -547,13 +567,12 @@ a:hover {
 }
 
 .tag-filter a:hover {
-  border-color: var(--brand);
-  color: var(--brand);
+  border-color: var(--ink-soft);
 }
 
 .tag-filter a[aria-current="page"] {
-  background: var(--brand);
-  border-color: var(--brand);
+  background: var(--heading);
+  border-color: var(--heading);
   color: var(--paper);
 }
 
@@ -569,7 +588,11 @@ a:hover {
 
 .year-group h2 {
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--brand);
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink-soft);
+  font-size: 1.15rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
 }
 
 /* ---------------------------------------------------------------
@@ -616,8 +639,13 @@ a:hover {
   display: inline-block;
   padding: 0.1rem 0.6rem;
   border-radius: 999px;
-  background: var(--brand-soft);
+  background: var(--chip);
+  color: var(--ink-soft);
   text-decoration: none;
+}
+
+.tags a:hover {
+  color: var(--heading);
 }
 
 .cover {
@@ -687,11 +715,11 @@ a:hover {
 }
 
 .prose li::marker {
-  color: var(--brand);
+  color: var(--ink-soft);
 }
 
 .prose blockquote {
-  border-left: 3px solid var(--brand);
+  border-left: 3px solid var(--rule);
   padding-left: 1.25rem;
   color: var(--ink-soft);
   font-style: italic;
@@ -742,7 +770,7 @@ a:hover {
 }
 
 .prose th {
-  color: var(--brand);
+  color: var(--heading);
 }
 
 .prose :not(pre) > code {
