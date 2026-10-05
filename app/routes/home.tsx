@@ -30,7 +30,17 @@ export default function Home({ loaderData }: Route.ComponentProps) {
             <a href={SITE.links.twd} className="button button-quiet">What is TWD?</a>
           </p>
         </div>
-        <TestRun />
+        <div className="hero-visual">
+          <img
+            className="hero-portrait"
+            src="/kevin-portrait.jpg"
+            alt="Kevin Martínez with arms crossed, wearing a TWD t-shirt"
+            width="640"
+            height="800"
+            fetchPriority="high"
+          />
+          <TestRun />
+        </div>
       </section>
 
       <section className="section" aria-labelledby="latest-heading">

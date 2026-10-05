@@ -17,6 +17,8 @@ describe("Home page", () => {
     twd.should(twdLink, "have.attr", "href", "https://twd.dev");
     const run = await screenDom.findByRole("figure", { name: /Test run: Kevin Martínez, 5 passing/ });
     twd.should(run, "be.visible");
+    const photo = await screenDom.findByAltText(/Kevin Martínez with arms crossed/);
+    twd.should(photo, "have.attr", "src", "/kevin-portrait.jpg");
   });
 
   it("lists the latest posts with dates and a link to all posts", async () => {

@@ -15,6 +15,13 @@ export const SITE = {
   },
 } as const;
 
+// Netlify serves every prerendered page from a folder and redirects /x to /x/,
+// so canonical URLs, the sitemap and the feed use the trailing-slash form.
+export function absoluteUrl(path: string) {
+  const withSlash = path.endsWith("/") ? path : `${path}/`;
+  return `${SITE.url}${withSlash}`;
+}
+
 type MetaInput = {
   title?: string;
   description: string;
@@ -27,7 +34,7 @@ type MetaInput = {
 
 export function pageMeta({ title, description, path, image, type = "website", canonical, publishedTime }: MetaInput) {
   const fullTitle = title ? `${title} | ${SITE.name}` : `${SITE.name} | Engineering quality, testing and TWD`;
-  const url = `${SITE.url}${path}`;
+  const url = absoluteUrl(path);
   const imageUrl = image ? (image.startsWith("http") ? image : `${SITE.url}${image}`) : `${SITE.url}${SITE.ogImage}`;
   return [
     { title: fullTitle },

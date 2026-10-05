@@ -295,6 +295,29 @@ a:hover {
   color: var(--heading);
 }
 
+/* Photo is the "app"; the test run sits over its corner like the TWD sidebar. */
+.hero-visual {
+  position: relative;
+  display: grid;
+  justify-items: end;
+}
+
+.hero-portrait {
+  width: min(78%, 22rem);
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--rule);
+}
+
+.hero-visual .test-run {
+  width: min(88%, 26rem);
+  margin-top: -6rem;
+  justify-self: start;
+  position: relative;
+}
+
 /* The test run: the one loud thing on the site. */
 .test-run {
   background: var(--panel-bg);
@@ -883,6 +906,20 @@ a:hover {
 @media (max-width: 52rem) {
   .hero {
     grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    justify-items: center;
+  }
+
+  .hero-portrait {
+    width: min(70%, 18rem);
+  }
+
+  .hero-visual .test-run {
+    justify-self: stretch;
+    width: auto;
+    margin-top: -3rem;
   }
 }
 

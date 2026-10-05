@@ -45,7 +45,8 @@ await check(`article HTML is complete (${sample.slug})`, async () => {
   contains(html, `<title>${sample.data.title} | Kevin Martínez</title>`, "title");
   contains(html, `<meta name="description" content="${sample.data.description}"`, "meta description");
   contains(html, `<meta property="og:title" content="${sample.data.title}"`, "og:title");
-  contains(html, `<link rel="canonical" href="https://www.kevinmartinez.dev/posts/${sample.slug}"`, "canonical");
+  contains(html, `<link rel="canonical" href="https://www.kevinmartinez.dev/posts/${sample.slug}/"`, "canonical");
+  contains(html, `<meta property="og:url" content="https://www.kevinmartinez.dev/posts/${sample.slug}/"`, "og:url");
   const sentence = sample.content
     .split("\n")
     .find((l) => /^[A-Z][^`*_\[\]<>]{60,}$/.test(l.trim()))
@@ -68,7 +69,9 @@ await check("rss.xml lists every post", async () => {
 
 await check("sitemap.xml lists every post", async () => {
   const xml = await read("sitemap.xml");
-  assert.equal((xml.match(/<loc>[^<]*\/posts\/[^<]+<\/loc>/g) ?? []).length, published.length);
+  const locs = xml.match(/<loc>[^<]*\/posts\/[^<]+<\/loc>/g) ?? [];
+  assert.equal(locs.length, published.length);
+  assert.ok(locs.every((l) => l.endsWith("/</loc>")), "every sitemap URL ends with a slash");
 });
 
 await check("dev-only test page is not shipped", async () => {
