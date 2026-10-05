@@ -19,9 +19,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
     <>
       <section className="hero">
         <div className="hero-copy">
-          <h1>
-            I help engineers ship software they can trust, and I write tests while I do it.
-          </h1>
+          <h1>Building software with confidence, for developers and their AI assistants.</h1>
           <p className="lede">
             I'm Kevin Martínez, a software architect working on testing strategy, developer
             experience and responsible AI adoption. I created TWD, an open-source way to run your

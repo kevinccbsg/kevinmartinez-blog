@@ -12,7 +12,7 @@ describe("Home page", () => {
     renderRoute(Home, { path: "/", loaderData: { latest: posts, total: 81 } });
 
     const heading = await screenDom.findByRole("heading", { level: 1 });
-    twd.should(heading, "contain.text", "ship software they can trust");
+    twd.should(heading, "have.text", "Building software with confidence, for developers and their AI assistants.");
     const twdLink = await screenDom.findByRole("link", { name: "What is TWD?" });
     twd.should(twdLink, "have.attr", "href", "https://twd.dev");
     const run = await screenDom.findByRole("figure", { name: /Test run: Kevin Martínez, 5 passing/ });
