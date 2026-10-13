@@ -13,7 +13,8 @@
     "dev:ci": "CI=true react-router dev",
     "collect:coverage:text": "npx nyc report --reporter=text --temp-dir .nyc_output",
     "collect:coverage:html": "npx nyc report --reporter=html --temp-dir .nyc_output",
-    "collect:coverage:lcov": "npx nyc report --reporter=lcov --temp-dir .nyc_output"
+    "collect:coverage:lcov": "npx nyc report --reporter=lcov --temp-dir .nyc_output",
+    "lint:twd": "twd-lint"
   },
   "dependencies": {
     "@react-router/node": "^8.4.0",
@@ -34,7 +35,8 @@
     "nyc": "^18.0.0",
     "tailwindcss": "^4.3.3",
     "twd-cli": "1.10.0",
-    "twd-js": "1.10.1",
+    "twd-js": "1.11.0",
+    "twd-lint": "1.0.0",
     "twd-relay": "1.4.0",
     "typescript": "^5.9.3",
     "vite": "^8.3.2",
