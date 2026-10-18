@@ -35,7 +35,7 @@
     "nyc": "^18.0.0",
     "tailwindcss": "^4.3.3",
     "twd-cli": "1.10.0",
-    "twd-js": "1.12.0-beta.0",
+    "twd-js": "1.12.0-beta.1",
     "twd-lint": "1.0.0",
     "twd-relay": "1.4.0",
     "typescript": "^5.9.3",
@@ -44,7 +44,7 @@
   },
   "overrides": {
     "twd-relay": {
-      "twd-js": "$twd-js"
+      "twd-js": "1.12.0-beta.1"
     }
   }
 }
