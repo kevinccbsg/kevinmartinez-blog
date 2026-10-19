@@ -40,7 +40,7 @@ jobs:
           CI: true
 
       - name: Run TWD tests
-        uses: BRIKEV/twd-cli/.github/actions/run@v1.10.0
+        uses: BRIKEV/twd-cli/.github/actions/run@v1.11.0
 
       - name: Display coverage
         run: npm run collect:coverage:text
