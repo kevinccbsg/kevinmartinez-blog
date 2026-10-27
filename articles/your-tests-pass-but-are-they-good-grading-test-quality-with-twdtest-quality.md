@@ -124,3 +124,7 @@ The tests that catch bugs in production are not the ones you wrote fastest. They
 ---
 
 Next in the series: the Test Flow Gallery — a curated set of reusable test patterns for common UI scenarios, so you are not writing from scratch every time.
+
+---
+
+> **Note (October 2026):** `/twd:test-quality` has been removed from the twd-ai plugin. It may come back, rebuilt with evals guarding it. See [how the twd-ai skills are tested](https://twd.dev/twd-ai/evals).

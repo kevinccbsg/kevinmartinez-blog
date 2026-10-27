@@ -106,3 +106,7 @@ The TWD AI plugin is open source and available at [github.com/BRIKEV/twd-ai](htt
 If you have been following this series, you now have the full picture. If you are coming to this article first — the rest of the series walks through each step in detail. Start at the beginning and build the workflow incrementally.
 
 Testing should not be a black box. Your team deserves to see what is covered.
+
+---
+
+> **Note (October 2026):** `/twd:test-flow-gallery` has been removed from the twd-ai plugin. It may come back, rebuilt with evals guarding it. See [how the twd-ai skills are tested](https://twd.dev/twd-ai/evals).

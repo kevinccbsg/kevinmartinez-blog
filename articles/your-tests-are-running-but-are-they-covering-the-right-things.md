@@ -92,3 +92,7 @@ A codebase can have 85% line coverage and a completely untested checkout flow.
 The next article in this series covers `/twd:test-quality` — a skill that goes beyond gap detection and grades the quality of your existing tests. Not just whether a route is tested, but whether the test is actually asserting the right things, using the right patterns, and giving you confidence you can rely on.
 
 If you're curious about the TWD plugin and want to try it yourself, the full source is at [https://github.com/BRIKEV/twd-ai](https://github.com/BRIKEV/twd-ai).
+
+---
+
+> **Note (October 2026):** `/twd:test-gaps` has been removed from the twd-ai plugin. It may come back, rebuilt with evals guarding it. See [how the twd-ai skills are tested](https://twd.dev/twd-ai/evals).
