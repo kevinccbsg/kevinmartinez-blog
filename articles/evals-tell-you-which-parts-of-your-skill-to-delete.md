@@ -76,5 +76,3 @@ The smaller the model, the more the skill adds. The rule Opus doesn't need is th
 The rule I follow now: a section is a candidate for deletion when its Δ is near zero on **every** model I support. Then I delete it and run the suite again. The score with the plugin has to stay where it was. If it drops, the section was doing something the Δ didn't show, and it goes back.
 
 It's TDD in reverse: the eval stays green while the skill gets shorter.
-
-Next in this series: the same skill on three models, and the rules that only break on the smaller ones.
