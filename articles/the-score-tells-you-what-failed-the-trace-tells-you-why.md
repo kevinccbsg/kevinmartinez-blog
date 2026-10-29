@@ -5,7 +5,7 @@ description: >-
   every step the agent took, says why. How to read one, the jq queries that
   make it fast, and a method to find where a passing run and a failing run
   split.
-date: '2026-10-28'
+date: '2026-10-29'
 tags:
   - ai
   - claudecode
@@ -129,4 +129,4 @@ The eval runs in a mode that refuses anything not allowed in advance. In daily u
 
 Most of the surprises in my eval work came from this file, not from the scores: a forked skill that never received its task, a sandbox that couldn't run `npx`, a model that stopped after the first green run. The score said something failed. The trace said what to do about it.
 
-Next in this series: what the score without your skill tells you about which parts of it to delete.
+Next in this series: [Evals tell you which parts of your skill to delete](https://kevinmartinez.dev/posts/evals-tell-you-which-parts-of-your-skill-to-delete/)

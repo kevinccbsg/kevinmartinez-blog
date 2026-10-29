@@ -5,7 +5,7 @@ description: >-
   nobody knows which lines still matter. Running each case with and without the
   skill answers that, per model, and the cost per run tells you what the extra
   lines are costing.
-date: '2026-10-28'
+date: '2026-10-29'
 tags:
   - ai
   - claudecode
