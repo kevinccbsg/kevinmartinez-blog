@@ -11,6 +11,7 @@ tags:
   - testing
   - productivity
 series: Evals for Claude Code skills
+devto_url: https://dev.to/kevinccbsg/i-tried-it-and-it-worked-is-not-a-test-for-your-claude-code-skills-2h39
 ---
 > A skill that works when you try it has passed one test, graded by you, once.
 
@@ -118,4 +119,4 @@ I still run my skills by hand on real projects. The eval doesn't replace that; i
 
 The scenarios twd-ai guards, and their scores per model, are on [twd.dev](https://twd.dev/twd-ai/evals).
 
-Next in this series: reading the trace, the file that turns a score into a reason.
+Next in this series: [The score tells you what failed. The trace tells you why.](https://kevinmartinez.dev/posts/the-score-tells-you-what-failed-the-trace-tells-you-why/)
