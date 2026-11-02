@@ -17,7 +17,7 @@ Every bridge is a place where the record can split in two. And the record is the
 
 ## Software is not only engineering
 
-[A software factory is a trust problem more than a speed problem](https://kevinmartinez.dev/posts/a-software-factory-is-a-trust-problem-more-than-a-speed-problem/), and trust needs a chain: request, spec, plan, change, verification, handover. Every link reads what the previous one wrote down. I call it **chain of custody**, and it deserves its own post.
+[A software factory is a trust problem more than a speed problem](https://kevinmartinez.dev/posts/a-software-factory-is-a-trust-problem-more-than-a-speed-problem/), and trust needs a chain: request, spec, plan, change, verification, handover. Every link reads what the previous one wrote down. I call it [chain of custody](https://kevinmartinez.dev/posts/chain-of-custody-every-requirement-arrives-signed-for/).
 
 Look at who holds the links. The request comes from product or a stakeholder. The definition of done needs product. Acceptance needs whoever asked. Design decides what the screen looks like before anyone builds it. Engineering holds maybe half of the chain.
 

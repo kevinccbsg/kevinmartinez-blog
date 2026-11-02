@@ -81,7 +81,7 @@ None of the above survives a team that routes around it.
 
 A factory is a chain. A request becomes a ticket, the ticket becomes a spec, the spec a plan, the plan a change, the change gets verified against the ticket and handed over. Break one link (a requirement agreed in a chat, a fix pushed without an issue, a hero developer who "just does it") and you lose the thing the whole factory exists to produce: a record you can trust.
 
-I call this **chain of custody**, borrowing the forensic term, and it deserves its own post.
+I call this [chain of custody](https://kevinmartinez.dev/posts/chain-of-custody-every-requirement-arrives-signed-for/), borrowing the forensic term, and it has its own post.
 
 It also means the factory is not an engineering project. Product, design and stakeholders work inside the same chain or the chain does not exist. That is the hardest part of all of this, and [it gets its own post too](https://kevinmartinez.dev/posts/your-software-factory-is-not-an-engineering-project/).
 
